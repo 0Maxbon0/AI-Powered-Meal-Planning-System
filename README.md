@@ -19,7 +19,7 @@ This repository contains the codebase for an AI-driven meal planning application
 - **Frontend**: HTML, CSS, Bootstrap
 - **Machine Learning**:
   - KNN for food similarity analysis.
-  - XGBoost for calorie and meal frequency predictions.
+  - Greedy Search Algorithm for meal finder.
 - **Data**:
   - `Cleaned_Data_Final.csv`: Nutritional dataset for various food items.
   - `All_Diets.csv`: Pre-defined dietary categories.
@@ -37,8 +37,8 @@ This repository contains the codebase for an AI-driven meal planning application
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-repo/meal-planner.git
-   cd meal-planner
+   git clone https://github.com/0Maxbon0/AI-Powered-Meal-Planning-System.git
+   cd AI-Powered-Meal-Planning-System
    ```
 
 2. **Install Dependencies**:
@@ -59,9 +59,8 @@ This repository contains the codebase for an AI-driven meal planning application
 ## Repository Structure
 
 ```
-📂 meal-planner
+📂 AI-Powered-Meal-Planning-System
 ├── generate_meal.py       # Core logic for meal generation and filtering
-├── max.py                 # Machine learning models for meal prediction
 ├── meal_planner.py        # Flask web application
 ├── Cleaned_Data_Final.csv # Cleaned nutritional dataset
 ├── All_Diets.csv          # Dietary dataset
@@ -76,14 +75,19 @@ This repository contains the codebase for an AI-driven meal planning application
 
 - Integration with external APIs for real-time nutritional data.
 - Advanced filtering for more dietary preferences.
+- Web app version.
 
 ---
 
 ## Contributors
 
-- **Your Name** - Developer
-- **Collaborator Name** - Data Scientist
-- **Collaborator Name** - UI/UX Designer
+The development of this project was made possible through the collaborative efforts of a dedicated team with diverse expertise:
 
----
+- **Maxim Mamdouh Salib** - Lead AI Developer, responsible for machine learning models and core logic implementation.
+- **Abdullah Salah El Sayed** - Algorithm Specialist, focused on optimizing recommendation systems and computational efficiency.
+- **Kerollos Fawzy Kamel** - Backend Engineer, developed and integrated Flask-based backend functionalities.
+- **Kerollos Nabil Worthy** - UI/UX Designer, ensured a user-friendly and aesthetically pleasing interface.
+- **Flora Osama Shukry** - UI/UX Designer & Data Analyst, contributed to interface design and dataset preparation.
+- **Kholoud Ashraf Ibrahim** - UI/UX Designer & Data Analyst, involved in interface design and data curation.
+- **Enjy Bushra Tawfik** - UI/UX Designer & Data Analyst, supported interface design and data refinement.
 
