@@ -1,0 +1,110 @@
+/* styles.css */
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/WhatsApp\ Image\ 2024-12-28\ at\ 9.44.32\ AM.jpeg'); /* Replace with your image path */
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */ 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/WhatsApp\ Image\ 2024-12-28\ at\ 9.46.19\ AM.jpeg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center center; /* Centers the image horizontally and vertically */
+    background-attachment: fixed; /* Keeps the background in place during scrolling */
+    -webkit-background-size: cover; /* Ensures compatibility with older browsers */
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh; /* Full viewport height */
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: white;
+    width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.header {
+    background: linear-gradient(to right, #b86e01, #d78e01);
+    color: white;
+    padding: 15px 0;
+    border-radius: 10px 10px 0 0;
+    margin: -20px -20px 10px -20px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.dual-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dual-inputs div {
+    width: 48%;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.divider {
+    border: 1px solid #b86e01;
+    margin: 10px 0;
+}
+
+button.generate-btn {
+    background: linear-gradient(to right, #b86e01, #d78e01);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+button.generate-btn:hover {
+    background: linear-gradient(to right, #d78e01, #b86e01);
+}

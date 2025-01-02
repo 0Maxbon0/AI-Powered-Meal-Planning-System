@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+   body{
+    min-height: 100vh;
+    background: url('/static/img3.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  } 
+  .container{
+    width: 85%;
+    min-height: 75vh;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color:white;
+    margin: 8%;
+    
+    border-radius: 15px;
+    
+  }
+  
+  .img1 img{
+    width: 600px;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    
+    
+    
+  }
+  .img1{
+    flex: 1;
+    
+  }
+  .text-container{
+    flex: 1;
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-direction: column;
+    padding-right: 10%;
+    
+    
+  }
+  .text-container h1{
+    font-size: 70px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 30%;
+    color: rgb(91, 52, 7);
+    padding-bottom: 20%;
+    font-weight:650;
+    
+    
+  
+    
+  }
+  .text-container h2{
+    font-size: 40px;
+    padding-right: 15%;
+    
+    
+    
+  }
+  .text-container p{
+    padding: 12px;
+    margin-top: 30px;
+    font-size: 17px;
+    
+  }
+  .text-container a{
+    text-decoration: none;
+    padding: 12px;
+   
+    margin-top: 30px;
+    background-color: rgb(91, 52, 7);
+    border-radius: 15px;
+    font-size: 20px;
+    color: aliceblue;
+    margin-bottom: -2%;
+    transition: .3s all ease-in-out;
+
+    
+  }
+  .text-container a:hover{
+    background-color: transparent;
+    color: black;
+    border: 2px solid rgb(91, 52, 7);
+  }
+  @media screen and (max-width:1600px) {
+    .container{
+        width: 90%;
+    }
+    .img1 img{
+      width:500px;
+      height: 750px;
+    }
+    .text-container h1{
+      font-size: 60px;
+    }
+  }
+  @media screen and (max-width:1230px) {
+    .container{
+        width:80%
+    }
+    .img1 img{
+      width:400px;
+      height: 750px;
+    }
+    .text-container h1{
+      font-size: 50px;
+    }
+  }
+  @media screen and (max-width:1150px) {
+    .container{
+        width:70%
+    }
+    .img1 img{
+      width:300px;
+      height: 750px;
+    }
+    .text-container h1{
+      font-size: 40px;
+    }
+    .text-container h2{
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width:1044px) {
+    .container{
+        flex-direction: column;
+        width: 70%;
+    }
+    .img1 img{
+      width:720px;
+      height: 500px;
+    }
+    
+    
+  }

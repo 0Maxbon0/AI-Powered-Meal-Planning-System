@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button Box</title>
+    <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-image: url('imgbg.jpg'); /* ضع رابط خلفية مشابه */
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+    
+        .container {
+          background: rgba(191, 185, 185, 0.904);
+          border-radius: 16px;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          width: 450px; /* العرض المحدد */
+          height: 450px; /* الارتفاع المحدد */
+          padding: 20px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+    
+        .container h1 {
+          margin: 0;
+          font-size: 24px;
+          color: #ffffff;
+          background: #c37816;
+          padding: 12px 0;
+          border-radius: 10px;
+        }
+    
+        .radio-box {
+          text-align: left;
+          margin: 10px 0;
+          width: 100%; /* ليملأ الـ container */
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-top: 40px;
+          padding-left: 140px; /* توزيع المسافة بين الخيارات */
+        }
+    
+        .radio-box label {
+          display: flex;
+          align-items: center;
+          font-size: 27px; /* تكبير النص */
+          color: #0a0707;
+          margin-bottom: 25px; /* زيادة المسافة بين الخيارات */
+        }
+    
+        .radio-box input[type="radio"] {
+          margin-right: 15px;
+          transform: scale(1.5);
+          color: #0a0707; /* تكبير الدوائر */
+        }
+    
+        .button {
+          display: inline-block;
+          background: #c37816;
+          color: #ffffff;
+          font-size: 22px; /* تكبير حجم النص داخل الزر */
+          text-align: center;
+          width: 60px; /* حجم الزر */
+          height: 60px;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          align-self: center; /* جعل الزر في المنتصف */
+          margin-top: 30px;
+        }
+    
+        .button:hover {
+          background: #8a560d; /* لون أغمق عند التمرير */
+        }
+        
+        
+      </style>
+      </head>
+<body>
+
+    <div class="container">
+        <form action="Choose_nutritional" method="post">
+            <label for="radio-group" style="font-size: 50px;">Choose a Nutritional Plan:</label>
+            <div class="radio-box">
+                <input type="radio" id="option1" name="options" value="high_calories">
+                <label for="option1">High Calories</label>
+                
+                <input type="radio" id="option2" name="options" value="high_protein">
+                <label for="option2">High Protein</label>
+                
+                <input type="radio" id="option3" name="options" value="high_carbs">
+                <label for="option3">High Carbs</label>
+                
+                <input type="radio" id="option4" name="options" value="balanced">
+                <label for="option4">Balanced</label>
+                
+                <!-- Icon-like Submit Button -->
+                <button type="submit" class="submit-icon" aria-label="Submit">&#x2714;</button>
+            </div>
+        </form>
+       
+
+    </div>
+
+</body>
+</html>
+
+
+

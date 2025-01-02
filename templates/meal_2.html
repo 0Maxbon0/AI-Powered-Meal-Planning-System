@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/img2.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Increased gap between the meal sections */
+            padding: 20px;
+        }
+
+        .meal {
+            background-color: #f3e2d4;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        .meal h2 {
+            text-align: center;
+            background-color: #b87333;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            margin: 0;
+        }
+
+        .sub-meal {
+            background-color: #d1d1d1;
+            border-radius: 8px;
+            margin: 15px 0;
+            padding: 10px;
+        }
+
+        .sub-meal p {
+            display: flex;
+            justify-content: space-between; /* Align text and numbers to opposite ends */
+            margin: 5px 0;
+        }
+
+        .total {
+            background-color: #b87333;
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .total p {
+            display: flex;
+            justify-content: space-between; /* Align text and numbers to opposite ends */
+            margin: 5px 0;
+        }
+
+        .footer {
+            margin-top: 20px;
+            background-color: #b87333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 40%; /* Decreased width */
+            border-radius: 10px; /* Added border radius */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer p {
+            display: flex;
+            justify-content: space-between; /* Align text and numbers to opposite ends */
+            margin: 5px 0;
+        }
+        center p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="meal">
+            <h2>Meal 1</h2>
+            <div class="sub-meal">
+                <center><p>{{meal_plan[0][0]['name']}}</p></center>
+                <p><span>Calories:</span><span>{{ meal_plan[0][0]['calories'] | round(2) }}</span></p>
+<p><span>Protein:</span><span>{{ meal_plan[0][0]['protein'] | round(2) }}</span></p>
+<p><span>Carbohydrates:</span><span>{{ meal_plan[0][0]['carbohydrate'] | round(2) }}</span></p>
+<p><span>Fiber:</span><span>{{ meal_plan[0][0]['fiber'] | round(2) }}</span></p>
+<p><span>Total Fat:</span><span>{{ meal_plan[0][0]['total_fat'] | round(2) }}</span></p>
+<p><span>Saturated Fat:</span><span>{{ meal_plan[0][0]['saturated_fat'] | round(2) }}</span></p>
+<p><span>Sugars:</span><span>{{ meal_plan[0][0]['sugars'] | round(2) }}</span></p>
+            </div>
+            <div class="sub-meal">
+                <center><p>{{meal_plan[0][1]['name']}}</p></center>
+                <p><span>Calories:</span><span>{{meal_plan[0][1]['calories']}}</span></p>
+                <p><span>Protein:</span><span>{{meal_plan[0][1]['protein']}}</span></p>
+                <p><span>Carbohydrates:</span><span>{{meal_plan[0][1]['carbohydrate']}}</span></p>
+                <p><span>Fiber:</span><span>{{meal_plan[0][1]['fiber']}}</span></p>
+                <p><span>Total Fat:</span><span>{{meal_plan[0][1]['total_fat']}}</span></p>
+                <p><span>Saturated Fat:</span><span>{{meal_plan[0][1]['saturated_fat']}}</span></p>
+                <p><span>Sugars:</span><span>{{meal_plan[0][1]['sugars']}}</span></p>
+            </div>
+            <div class="sub-meal">
+                <center><p>{{meal_plan[0][2]['name']}}</p></center>
+                <p><span>Calories:</span><span>{{meal_plan[0][2]['calories']}}</span></p>
+                <p><span>Protein:</span><span>{{meal_plan[0][2]['protein']}}</span></p>
+                <p><span>Carbohydrates:</span><span>{{meal_plan[0][2]['carbohydrate']}}</span></p>
+                <p><span>Fiber:</span><span>{{meal_plan[0][2]['fiber']}}</span></p>
+                <p><span>Total Fat:</span><span>{{meal_plan[0][2]['total_fat']}}</span></p>
+                <p><span>Saturated Fat:</span><span>{{meal_plan[0][2]['saturated_fat']}}</span></p>
+                <p><span>Sugars:</span><span>{{meal_plan[0][2]['sugars']}}</span></p>
+            </div>
+            <div class="total">
+                <p><span>Total Calories:</span><span>{{total_macros_per_meal[0]['calories']}}</span></p>
+                <p><span>Protein:</span><span>{{total_macros_per_meal[0]['protein']}}</span></p>
+                <p><span>Carbs:</span><span>{{total_macros_per_meal[0]['carbohydrate']}}</span></p>
+                <p><span>Fat:</span><span>{{total_macros_per_meal[0]['total_fat']}}</span></p>
+            </div>
+        </div>
+
+        <div class="meal">
+            <h2>Meal 2</h2>
+            <div class="sub-meal">
+                <center><p>{{meal_plan[1][0]['name']}}</p></center>
+                <p><span>Calories:</span><span>{{meal_plan[1][0]['calories']}}</span></p>
+                <p><span>Protein:</span><span>{{meal_plan[1][0]['protein']}}</span></p>
+                <p><span>Carbohydrates:</span><span>{{meal_plan[1][0]['carbohydrate']}}</span></p>
+                <p><span>Fiber:</span><span>{{meal_plan[1][0]['fiber']}}</span></p>
+                <p><span>Total Fat:</span><span>{{meal_plan[1][0]['total_fat']}}</span></p>
+                <p><span>Saturated Fat:</span><span>{{meal_plan[1][0]['saturated_fat']}}</span></p>
+                <p><span>Sugars:</span><span>{{meal_plan[1][0]['sugars']}}</span></p>
+            </div>
+            <div class="sub-meal">
+                <center><p>{{meal_plan[1][1]['name']}}</p></center>
+                <p><span>Calories:</span><span>{{meal_plan[1][1]['calories']}}</span></p>
+                <p><span>Protein:</span><span>{{meal_plan[1][1]['protein']}}</span></p>
+                <p><span>Carbohydrates:</span><span>{{meal_plan[1][1]['carbohydrate']}}</span></p>
+                <p><span>Fiber:</span><span>{{meal_plan[1][1]['fiber']}}</span></p>
+                <p><span>Total Fat:</span><span>{{meal_plan[1][1]['total_fat']}}</span></p>
+                <p><span>Saturated Fat:</span><span>{{meal_plan[1][1]['saturated_fat']}}</span></p>
+                <p><span>Sugars:</span><span>{{meal_plan[1][1]['sugars']}}</span></p>
+            </div>
+            <div class="sub-meal">
+                <center><p>{{meal_plan[1][2]['name']}}</p></center>
+                <p><span>Calories:</span><span>{{meal_plan[1][2]['calories']}}</span></p>
+                <p><span>Protein:</span><span>{{meal_plan[1][2]['protein']}}</span></p>
+                <p><span>Carbohydrates:</span><span>{{meal_plan[1][2]['carbohydrate']}}</span></p>
+                <p><span>Fiber:</span><span>{{meal_plan[1][2]['fiber']}}</span></p>
+                <p><span>Total Fat:</span><span>{{meal_plan[1][2]['total_fat']}}</span></p>
+                <p><span>Saturated Fat:</span><span>{{meal_plan[1][2]['saturated_fat']}}</span></p>
+                <p><span>Sugars:</span><span>{{meal_plan[1][2]['sugars']}}</span></p>
+            </div>
+            <div class="total">
+                <p><span>Total Calories:</span><span>{{total_macros_per_meal[1]['calories']}}</span></p>
+                <p><span>Protein:</span><span>{{total_macros_per_meal[1]['protein']}}</span></p>
+                <p><span>Carbs:</span><span>{{total_macros_per_meal[1]['carbohydrate']}}</span></p>
+                <p><span>Fat:</span><span>{{total_macros_per_meal[1]['total_fat']}}</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        
+        <p style="text-align: center;"><span >Total Meals</span><span></span></p>
+        <p><span>Calories:</span><span>{{total_macros['calories']}}</span></p>
+        <p><span>Protein:</span><span>{{total_macros['protein']}}</span></p>
+        <p><span>Carbs:</span><span>{{total_macros['carbohydrate']}}</span></p>
+        <p><span>Fat:</span><span>{{total_macros['total_fat']}}</span></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Table with Background</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('/static/img2.jpg') no-repeat center center/cover;
+      color: #333;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      max-width: 90%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #3f51b5;
+      color: white;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e8e8e8;
+    }
+
+    td {
+      color: #333;
+    }
+    .traa{
+      background-color: #2f2e30;
+      color: wheat;
+    }
+    .tra{
+      background-color: #a16666;
+      color: rgb(255, 255, 255);
+    }
+    @media screen and (max-width: 768px) {
+      table {
+        font-size: 16px;
+      }
+
+      th, td {
+        padding: 10px 12px;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="table-container">
+    <h2 style="text-align: center; margin-bottom: 10px;">{{similar_foodd['product_name']}}</h2>
+    <table>
+      <thead>
+        <th>name</th>
+        <th>calories</th>
+        <th>protein</th>
+        <th>carbohydrate</th>
+        <th>total_fat</th>
+        <th>fiber</th>
+        <th>sugars</th>
+        <th>saturated_fat</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="traa">{{similar_foodd['similar_products'][0]['name']}} </td>
+          <td class="traa">{{similar_foodd['similar_products'][0]['calories']}} </td>
+          <td class="traa">{{similar_foodd['similar_products'][0]['protein']}} </td>
+          <td class="traa">{{similar_foodd['similar_products'][0]['carbohydrate']}} </td>
+          <td class="traa">{{similar_foodd['similar_products'][0]['total_fat']}} </td>
+          <td class="traa">{{similar_foodd['similar_products'][0]['fiber']}} </td>
+          <td class="traa">{{similar_foodd['similar_products'][0]['sugars']}} </td>
+          <td class="traa">{{similar_foodd['similar_products'][0]['saturated_fat']}} </td>
+        </tr>
+        <tr>
+          <td class="tra">{{similar_foodd['similar_products'][1]['name']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][1]['calories']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][1]['protein']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][1]['carbohydrate']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][1]['total_fat']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][1]['fiber']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][1]['sugars']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][1]['saturated_fat']}} </td>
+        </tr>
+        <tr>
+          <td class="tra">{{similar_foodd['similar_products'][2]['name']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][2]['calories']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][2]['protein']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][2]['carbohydrate']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][2]['total_fat']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][2]['fiber']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][2]['sugars']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][2]['saturated_fat']}} </td>
+        </tr>
+        <tr>
+          <td class="tra">{{similar_foodd['similar_products'][3]['name']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][3]['calories']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][3]['protein']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][3]['carbohydrate']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][3]['total_fat']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][3]['fiber']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][3]['sugars']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][3]['saturated_fat']}} </td>
+        </tr>
+        <tr>
+          <td class="tra">{{similar_foodd['similar_products'][4]['name']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][4]['calories']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][4]['protein']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][4]['carbohydrate']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][4]['total_fat']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][4]['fiber']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][4]['sugars']}} </td>
+          <td class="tra">{{similar_foodd['similar_products'][4]['saturated_fat']}} </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

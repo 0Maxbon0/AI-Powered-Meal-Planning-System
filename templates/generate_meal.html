@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Meal Plan</title>
+    <link rel="stylesheet" href="/static/home.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="header">
+                <h1>Generate</h1>
+            </div>
+            <p class="subtitle">Please Fill Out The Form Below</p>
+            <form action="generate_meal" method="post">
+                <div class="section">
+                    <!-- <label>Please Select One Option:</label>
+                    <div class="options">
+                        <label><input type="radio" name="option_of_generate" value="1"> Generate a meal plan</label> -->
+                        <!-- <label><input type="radio" name="option_of_generate" value="2"> Find similar product</label> -->
+                        <!-- <label><input type="radio" name="option_of_generate" value="3"> Find a meal by nutritional need</label> -->
+                    <!-- </div> -->
+                </div>
+                <hr class="divider">
+                <div class="section">
+                    <label>Age</label>
+                    <input type="number" placeholder="Age" name="age">
+                </div>
+                <div class="section">
+                    <label>Gender</label>
+                    <label><input type="radio" name="gender" value="1"> Male</label>
+                    <label><input type="radio" name="gender" value="2"> Female</label>
+                </div>
+                <div class="section dual-inputs">
+                    <div>
+                        <label>Height (cm)</label>
+                        <input type="number" placeholder="Height" name="height" min="120" max="200">
+                    </div>
+                    <div>
+                        <label>Weight (kg)</label>
+                        <input type="number" placeholder="Weight" name="weight" min="40" max="150">
+                    </div>
+                </div>
+                <div class="section">
+                    <label>Activity Level</label>
+                    <label><input type="radio" name="activity" value="1"> Sedentary</label>
+                    <label><input type="radio" name="activity" value="2"> Light</label>
+                    <label><input type="radio" name="activity" value="3"> Moderate</label>
+                    <label><input type="radio" name="activity" value="4"> Very Active</label>
+                </div>
+                <div class="section">
+                    <label>Target</label>
+                    <label><input type="radio" name="target" value="1"> Hard Gain</label>
+                    <label><input type="radio" name="target" value="2"> Gain</label>
+                    <label><input type="radio" name="target" value="3"> Maintain</label>
+                    <label><input type="radio" name="target" value="4"> Loss</label>
+                    <label><input type="radio" name="target" value="5"> Hard Loss</label>
+                </div>
+                <div class="section">
+                    <label>Number of Meals</label>
+                    <input type="number" placeholder="Number of Meals" name="Number_of_Meals" min="2" max="4">
+                </div>
+                <!-- <div class="section">
+                    <label>Food Preferences</label>
+                    <input type="text" placeholder="Food Preferences" name="Food_Preferences">
+                </div> -->
+                <!-- <div class="section">
+                    <label>Sensitive</label>
+                    <input type="text" placeholder="Sensitive" name="sensitive">
+
+                </div> -->
+                <div class="section">
+                    <label>Please Select One Option:</label>
+                    <div class="options">
+                        <label><input type="radio" name="sensitive" value="nuts">nuts</label>
+                        <label><input type="radio" name="sensitive" value="lactose">lactose</label>
+                        <label><input type="radio" name="sensitive" value="soy">soy</label>
+                        <label><input type="radio" name="sensitive" value="gluten">gluten</label>
+                        <label><input type="radio" name="sensitive" value="vegan">vegan</label>
+                        <label><input type="radio" name="sensitive" value="">None</label>
+                    </div>
+                </div>
+                <button type="submit" class="generate-btn">Generate</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
