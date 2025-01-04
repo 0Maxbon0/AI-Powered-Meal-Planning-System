@@ -1,5 +1,4 @@
 from flask import Flask,render_template,request,redirect,url_for
-# from sklearn.neighbors import NearpestNeighbors 
 import pandas as pd
 import numpy as np
 from generate_meal import generate_meal_plan,find_similar_product,find_meal_by_nutritional_need

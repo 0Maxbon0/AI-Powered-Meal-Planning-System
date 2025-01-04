@@ -61,33 +61,42 @@ def filter_allergenic_products(df, allergies):
 
 # KNN to find similar products using ML
 def find_similar_product(product_name, n=5):
-    product_row = df[df['name'].str.lower() == product_name.lower().strip()]
-    if product_row.empty:
+    product_name = product_name.strip().lower()  
+    
+    matching_products = df[df['name'].str.lower().str.contains(product_name, na=False)]
+    
+    if matching_products.empty:
         print("Product not found in the dataset.")
         return {}
 
-    # Extract nutrient columns for comparison
+    product_row = matching_products.iloc[0]
+    product_index = product_row.name  # Index of the matched product
+
     nutrient_columns = ['calories', 'protein', 'carbohydrate', 'total_fat', 'fiber', 'sugars', 'saturated_fat']
+    
+    if not all(col in df_scaled.columns for col in nutrient_columns):
+        print("Nutrient columns are missing in the scaled dataset.")
+        return {}
+
     X = df_scaled[nutrient_columns]
 
-    # Initialize the Nearest Neighbors model
     knn = NearestNeighbors(n_neighbors=n + 1, metric='euclidean')
-    knn.fit(X.values)  # Use .values to avoid issues with feature names
+    knn.fit(X.values)
 
-    # Find neighbors for the given product
-    product_index = product_row.index[0]
-    product_features = X.loc[product_index].values.reshape(1, -1)  # Ensure proper format
+    product_features = X.loc[product_index].values.reshape(1, -1)
+    
     distances, indices = knn.kneighbors(product_features)
 
-    # Exclude the product itself and retrieve similar products
     similar_indices = indices[0][1:]
     similar_products = df.iloc[similar_indices]
 
-    # Convert the results to a list of dictionaries
     similar_products_list = similar_products[['name', 'calories', 'protein', 'carbohydrate', 'total_fat', 'fiber', 'sugars', 'saturated_fat']].to_dict('records')
+    
     print(f"Similar products to '{product_name}':")
     print(similar_products_list)
+    
     return {"product_name": product_name, "similar_products": similar_products_list}
+
 
 
 def validate_input(prompt, min_val, max_val, input_type=float):
@@ -103,7 +112,7 @@ def validate_input(prompt, min_val, max_val, input_type=float):
 
 # Function to enforce realistic nutrient ranges
 def is_within_bounds(calories, protein, carbs, fats, fiber, sugars, saturated_fat,
-                    target_calories, protein_target, carb_target, fat_target, num_meals):
+                     target_calories, protein_target, carb_target, fat_target, num_meals):
     # Ensure target values are distributed across meals
     meal_index = list(range(num_meals))  # Create indices for each meal
 
@@ -114,10 +123,10 @@ def is_within_bounds(calories, protein, carbs, fats, fiber, sugars, saturated_fa
         fat_target_i = fat_target[i] if isinstance(fat_target, list) else fat_target
 
         if not (
-            0.9 * target_calories_i <= calories <= 1.1 * target_calories_i and
-            0.9 * protein_target_i <= protein <= 1.1 * protein_target_i and
-            0.9 * carb_target_i <= carbs <= 1.1 * carb_target_i and
-            0.9 * fat_target_i <= fats <= 1.1 * fat_target_i #and
+            0.9 * target_calories_i <= calories <= 1.05 * target_calories_i and
+            0.9 * protein_target_i <= protein <= 1.05 * protein_target_i and
+            0.9 * carb_target_i <= carbs <= 1.05 * carb_target_i and
+            0.9 * fat_target_i <= fats <= 1.05 * fat_target_i #and
             # fiber >= 5 and  # Minimum fiber per meal (adjust as needed)
             # sugars <= 25 and  # Maximum sugars per meal (adjust as needed)
             # saturated_fat <= 10  # Maximum saturated fat per meal (adjust as needed)
@@ -138,7 +147,7 @@ def calculate_portion_size_factor(scale_calories, scale_protein, scale_carbs, sc
     weighted_factor = (0.5 * scale_calories + 0.3 * scale_protein + 0.1 * scale_carbs + 0.1 * scale_fats)
 
     # Adjust for BMI: Higher BMI scales portions up
-    bmi_adjustment = 1.5 if bmi >= 25 else (1.2 if 18.5 <= bmi < 25 else 1.1)
+    bmi_adjustment = 1.3 if bmi >= 25 else (1.1 if 18.5 <= bmi < 25 else 1)
 
     # Adjust for gender: Males generally require more portions
     gender_adjustment = 1.2 if gender == 'male' else 1.0
@@ -153,7 +162,6 @@ def calculate_portion_size_factor(scale_calories, scale_protein, scale_carbs, sc
     portion_size_factor = max(0.8, min(portion_size_factor, 3.0))
 
     return portion_size_factor
-
 
 
 

@@ -5,87 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Plan</title>
     <style>
-        
-        body {
-            font-family: Arial, sans-serif;
+        html, body {
+            height: 100%;
             margin: 0;
-            padding: 0;
-            background-image: url('/static/img2.jpg'); /* Replace with your image URL */
+            display: flex;
+            flex-direction: column;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('/static/img2.jpg'); 
             background-size: cover;
             background-repeat: no-repeat;
             color: #333;
         }
 
         .container {
+            flex: 1; /* Takes available space between header and footer */
             display: flex;
             justify-content: center;
-            gap: 40px; /* Increased gap between the meal sections */
+            flex-wrap: wrap;
+            gap: 30px;
             padding: 20px;
         }
 
         .meal {
-            background-color: #f3e2d4;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            width: 400px;
-            margin-left: 80px;
-            margin-right: 80px;
-            margin-top: 20%;
+            width: 300px;
+            text-align: center;
         }
 
         .meal h2 {
-            text-align: center;
-            background-color: #b87333;
+            background-color: #4caf50;
             color: white;
             padding: 10px;
-            border-radius: 10px 10px 0 0;
-            margin: 0;
+            border-radius: 15px 15px 0 0;
+            margin: -20px -20px 20px -20px;
         }
 
         .sub-meal {
-            background-color: #d1d1d1;
-            border-radius: 8px;
             margin: 15px 0;
-            padding: 10px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #fafafa;
         }
 
         .sub-meal p {
-            display: flex;
-            justify-content: space-between; /* Align text and numbers to opposite ends */
             margin: 5px 0;
-        }
-
-        .total {
-            background-color: #b87333;
-            color: white;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .total p {
+            font-size: 14px;
             display: flex;
-            justify-content: space-between; /* Align text and numbers to opposite ends */
-            margin: 5px 0;
+            justify-content: space-between;
+            color: #555;
         }
 
-        .footer {
-            margin-top: 20px;
-            background-color: #b87333;
+        footer {
+
             color: white;
             text-align: center;
             padding: 10px;
-            width: 40%; /* Decreased width */
-            border-radius: 10px; /* Added border radius */
-            margin-left: auto;
-            margin-right: auto;
+            border-radius: 10px 10px 0 0;
         }
 
-        .footer p {
-            display: flex;
-            justify-content: space-between; /* Align text and numbers to opposite ends */
-            margin: 5px 0;
+        footer p {
+            font-size: 14px;
         }
     </style>
 </head>
@@ -94,54 +81,61 @@
         <div class="meal">
             <h2>Meal 1</h2>
             <div class="sub-meal">
-                <center><p>{{selected_meals[0]['name']}}</p></center>
-                <p><span>Calories:</span><span>{{selected_meals[0]['calories']}}</span></p>
-                <p><span>Protein:</span><span>{{selected_meals[0]['protein']}}</span></p>
-                <p><span>Carbohydrates:</span><span>{{selected_meals[0]['carbohydrate']}}</span></p>
-                <p><span>Cuisine_type:</span><span>{{selected_meals[0]['Cuisine_type']}}</span></p>
-                <p><span>Total Fat:</span><span>{{selected_meals[0]['total_fat']}}</span></p>
-                <p><span>Estimated_Weight:</span><span>{{selected_meals[0]['Estimated_Weight']}}90.0</span></p>
-                
+                <p><strong>Name:</strong> <span>{{selected_meals[0]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[0]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[0]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[0]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[0]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[0]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[0]['Estimated_Weight(g)']}}g</span></p>
             </div>
         </div>
+
         <div class="meal">
             <h2>Meal 2</h2>
             <div class="sub-meal">
-                <center><p>{{selected_meals[1]['name']}}</p></center>
-                <p><span>Calories:</span><span>{{selected_meals[1]['calories']}}</span></p>
-                <p><span>Protein:</span><span>{{selected_meals[1]['protein']}}</span></p>
-                <p><span>Carbohydrates:</span><span>{{selected_meals[1]['carbohydrate']}}</span></p>
-                <p><span>Cuisine_type:</span><span>{{selected_meals[1]['Cuisine_type']}}</span></p>
-                <p><span>Total Fat:</span><span>{{selected_meals[1]['total_fat']}}</span></p>
-                <p><span>Estimated_Weight:</span><span>{{selected_meals[1]['Estimated_Weight']}}213.3</span></p>
-                
+                <p><strong>Name:</strong> <span>{{selected_meals[1]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[1]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[1]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[1]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[1]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[1]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[1]['Estimated_Weight(g)']}}g</span></p>
+
             </div>
-        </div>   
+        </div>
+
         <div class="meal">
             <h2>Meal 3</h2>
             <div class="sub-meal">
-                <center><p>{{selected_meals[2]['name']}}</p></center>
-                <p><span>Calories:</span><span>{{selected_meals[2]['calories']}}</span></p>
-                <p><span>Protein:</span><span>{{selected_meals[2]['protein']}}</span></p>
-                <p><span>Carbohydrates:</span><span>{{selected_meals[2]['carbohydrate']}}</span></p>
-                <p><span>Cuisine_type:</span><span>{{selected_meals[2]['Cuisine_type']}}</span></p>
-                <p><span>Total Fat:</span><span>{{selected_meals[2]['total_fat']}}</span></p>
-                <p><span>Estimated_Weight:</span><span>{{selected_meals[2]['Estimated_Weight']}}92.23</span></p>
-                
+                <p><strong>Name:</strong> <span>{{selected_meals[2]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[2]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[2]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[2]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[2]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[2]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[2]['Estimated_Weight(g)']}}g</span></p>
+
             </div>
-        </div>   
+        </div>
+
         <div class="meal">
             <h2>Meal 4</h2>
             <div class="sub-meal">
-                <center><p>{{selected_meals[3]['name']}}</p></center>
-                <p><span>Calories:</span><span>{{selected_meals[3]['calories']}}</span></p>
-                <p><span>Protein:</span><span>{{selected_meals[3]['protein']}}</span></p>
-                <p><span>Carbohydrates:</span><span>{{selected_meals[3]['carbohydrate']}}</span></p>
-                <p><span>Cuisine_type:</span><span>{{selected_meals[3]['Cuisine_type']}}</span></p>
-                <p><span>Total Fat:</span><span>{{selected_meals[3]['total_fat']}}</span></p>
-                <p><span>Estimated_Weight:</span><span>{{selected_meals[3]['Estimated_Weight']}}254.3</span></p>
-                
+                <p><strong>Name:</strong> <span>{{selected_meals[3]['name']}}</span></p>
+                <p><strong>Calories:</strong> <span>{{selected_meals[3]['calories']}}</span></p>
+                <p><strong>Protein:</strong> <span>{{selected_meals[3]['protein']}}</span></p>
+                <p><strong>Carbohydrates:</strong> <span>{{selected_meals[3]['carbohydrate']}}</span></p>
+                <p><strong>Cuisine Type:</strong> <span>{{selected_meals[3]['Cuisine_type']}}</span></p>
+                <p><strong>Total Fat:</strong> <span>{{selected_meals[3]['total_fat']}}</span></p>
+                <p><strong>Estimated Weight:</strong> <span>{{selected_meals[3]['Estimated_Weight(g)']}}g</span></p>
+
             </div>
-        </div>      
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Meal Planner | All Rights Reserved</p>
+    </footer>
 </body>
 </html>
